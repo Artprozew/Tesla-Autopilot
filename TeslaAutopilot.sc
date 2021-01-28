@@ -112,7 +112,7 @@ ELSE
                 SET_CHAR_MODEL_ALPHA char2, 255 // Resolve um bug que os peds ficavam aparecendo invisiveis?
                 DELETE_CHAR char2
             ENDIF
-            //CREATE_RANDOM_CHAR_AS_DRIVER veh, char2  // Essa funÁ„o pegava um char aleatÛrio na rua e o teleportava pro carro, ent„o um char sumia do nada da tela??
+            //CREATE_RANDOM_CHAR_AS_DRIVER veh, char2  // Essa fun√ß√£o pegava um char aleat√≥rio na rua e o teleportava pro carro, ent√£o um char sumia do nada da tela??
             CREATE_CHAR_INSIDE_CAR veh, PEDTYPE_CIVMALE, MALE01, char2
             SET_CAR_ENGINE_ON veh, 1
             CLOSE_ALL_CAR_DOORS veh
@@ -124,13 +124,10 @@ ELSE
             SET_CAR_CAN_GO_AGAINST_TRAFFIC veh, 1
             autopilot = TRUE
             autodrive = TRUE
-            WHILE IS_KEY_PRESSED VK_KEY_K
+            WHILE IS_KEY_PRESSED VK_TAB
                 WAIT 0
             ENDWHILE
         ENDIF
-        WHILE IS_KEY_PRESSED VK_TAB
-            WAIT 0
-        ENDWHILE
     ENDIF
 ENDIF
 
@@ -222,7 +219,7 @@ AND IS_CHAR_IN_ANY_CAR scplayer
                     SET_AUDIO_STREAM_STATE warning, 1
                     SET_AUDIO_STREAM_VOLUME warning, sfxvolume
                 ENDIF
-                SET_CAR_LIGHTS_ON veh, 1 // Por algum motivo n„o funciona aqui?
+                SET_CAR_LIGHTS_ON veh, 1 // Por algum motivo n√£o funciona aqui?
                 WHILE TRUE
                     WAIT 0
                     IF NOT mode = 0
@@ -258,7 +255,7 @@ AND IS_CHAR_IN_ANY_CAR scplayer
                 SET_CAR_LIGHTS_ON veh, 0
                 GET_CAR_SPEED veh, vspeed
                 WAIT 2000
-                //APPLY_BRAKES_TO_PLAYERS_CAR 0, 1 // Por algum motivo isso tambÈm faz o carro da frente frear
+                //APPLY_BRAKES_TO_PLAYERS_CAR 0, 1 // Por algum motivo isso tamb√©m faz o carro da frente frear
             ENDIF
         ELSE
             IF autopilot = TRUE
@@ -420,7 +417,7 @@ AND FRAME_MOD 40
                         GOTO main_loop
                     ENDIF
                     fvar +=@ 0.01
-                    CAR_HORN veh // N„o funciona aqui?
+                    CAR_HORN veh // N√£o funciona aqui?
                     SET_CAR_LIGHTS_ON veh, 1 // Same
                     OPEN_CAR_DOOR_A_BIT veh, 2, fvar
                     IF IS_CAR_DOOR_FULLY_OPEN veh, 2
